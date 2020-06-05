@@ -1,18 +1,27 @@
-import React from 'react';
+import React, { Component } from 'react'
 import '../App.css';
+import ButtonPanel from './ButtonPanel'
 
-function App() {
-  return (
-    <div className="App">
+
+class App extends Component {
+  constructor(props) {
+    super(props)
+    this.handleButtonClick = this.handleButtonClick.bind(this)
+  }
+  handleButtonClick(value) {
+    console.log(value)
+  }
+  render() {
+    return (
+      <div className="App">
       <header className="App-header">
 
-        <p>
-          calculator
-        </p>
+        <ButtonPanel onClick={this.handleButtonClick}></ButtonPanel>
 
       </header>
     </div>
-  );
+    )
+  }
 }
 
 export default App;
