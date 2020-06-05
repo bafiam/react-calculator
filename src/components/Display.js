@@ -1,21 +1,34 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-export class Display extends Component {
-  static propTypes = {
-    results: PropTypes.string
-  }
-  static defaultProps = {
-    results: '0'
-  }
-
+// eslint-disable-next-line react/prefer-stateless-function
+class Display extends Component {
   render() {
+    const {
+      firstNumber, operator, secondNumber, result,
+    } = this.props;
     return (
       <div>
-        {this.props.results}
+        <div>{firstNumber}</div>
+        <div>{operator}</div>
+        <div>{secondNumber}</div>
+        <div>{result}</div>
       </div>
-    )
+    );
   }
 }
+Display.propTypes = {
+  result: PropTypes.string,
+  firstNumber: PropTypes.string,
+  operator: PropTypes.string,
+  secondNumber: PropTypes.string,
+};
 
-export default Display
+Display.defaultProps = {
+  result: '0',
+  firstNumber: '',
+  operator: '',
+  secondNumber: '',
+};
+
+export default Display;

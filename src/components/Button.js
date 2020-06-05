@@ -1,22 +1,29 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
+// eslint-disable-next-line react/prefer-stateless-function
 class Button extends Component {
-  
-  static propTypes = {
-    value: PropTypes.string,
-    name: PropTypes.string
-
-  }
-
   render() {
+    const { name, value, onClick } = this.props;
     return (
-    <button 
-    className = {this.props.name} 
-    value= {this.props.value} 
-    onClick={this.props.onClick.bind(null, this.props.value)}
-    >{this.props.value}</button>
-    )
+      // eslint-disable-next-line react/button-has-type
+      <button
+        className={name}
+        value={value}
+        onClick={onClick.bind(null, value)}
+      >
+        {value}
+      </button>
+    );
   }
 }
-export default Button 
+Button.propTypes = {
+  // eslint-disable-next-line react/require-default-props
+  value: PropTypes.string,
+  // eslint-disable-next-line react/require-default-props
+  name: PropTypes.string,
+  // eslint-disable-next-line react/require-default-props
+  onClick: PropTypes.func,
+
+};
+export default Button;
