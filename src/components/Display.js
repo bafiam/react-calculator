@@ -1,11 +1,13 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import '../css/Display.css'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import '../css/Display.css';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class Display extends Component {
   render() {
-    const { firstNumber, operator, secondNumber, result } = this.props;
+    const {
+      firstNumber, operator, secondNumber, result,
+    } = this.props;
     return (
       <div className="display">
         <div className="displayDivs">{firstNumber}</div>
@@ -24,10 +26,10 @@ Display.propTypes = {
 };
 
 Display.defaultProps = {
-  result: "0",
-  firstNumber: "",
-  operator: "",
-  secondNumber: "",
+  result: '0',
+  firstNumber: '',
+  operator: '',
+  secondNumber: '',
 };
 
 export default Display;
