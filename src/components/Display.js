@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-
+import '../css/Display.css'
 
 // eslint-disable-next-line react/prefer-stateless-function
 class Display extends Component {
