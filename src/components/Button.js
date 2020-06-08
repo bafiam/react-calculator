@@ -18,12 +18,21 @@ class Button extends Component {
   }
 }
 Button.propTypes = {
-  // eslint-disable-next-line react/require-default-props
+
   value: PropTypes.string,
-  // eslint-disable-next-line react/require-default-props
+
   name: PropTypes.string,
-  // eslint-disable-next-line react/require-default-props
+
   onClick: PropTypes.func,
+
+};
+Button.defaultProps = {
+
+  value: '',
+
+  name: 'button',
+
+  onClick: () => {},
 
 };
 export default Button;
