@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import '../App.css';
+import '../css/App.css';
 import ButtonPanel from './ButtonPanel';
-import Display from './Display';
+import Display from './Display'
 
 class App extends Component {
   constructor(props) {
@@ -52,6 +52,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
+        <div className="calculator">
           <Display
             firstNumber={firstNumber}
             operator={operator}
@@ -59,6 +60,7 @@ class App extends Component {
             result={results}
           />
           <ButtonPanel onClick={this.handleButtonClick} />
+          </div>
         </header>
       </div>
     );
