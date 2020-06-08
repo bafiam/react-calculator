@@ -19,7 +19,7 @@ class App extends Component {
 
   handleButtonClick(value) {
     const numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '.'];
-    const ops = ['/', '*', '-', '+', '%'];
+    const ops = ['÷', '*', '-', '+', '%'];
     const { firstNumber, operator, secondNumber } = this.state;
 
     if (numbers.includes(value) && operator === 'sign') {

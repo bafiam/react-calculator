@@ -16,7 +16,7 @@
 .calculator {
   width: 700px;
   background-color: white;
-  height: 500px;
+  height: inherit;
 }
 
 @keyframes App-logo-spin {
