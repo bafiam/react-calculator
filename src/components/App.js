@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../App.css';
+import '../css/App.css';
 import ButtonPanel from './ButtonPanel';
 import Display from './Display';
 
@@ -19,7 +19,7 @@ class App extends Component {
 
   handleButtonClick(value) {
     const numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '.'];
-    const ops = ['/', '*', '-', '+', '%'];
+    const ops = ['÷', '*', '-', '+', '%'];
     const { firstNumber, operator, secondNumber } = this.state;
 
     if (numbers.includes(value) && operator === 'sign') {
@@ -52,13 +52,15 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <Display
-            firstNumber={firstNumber}
-            operator={operator}
-            secondNumber={secondNumber}
-            result={results}
-          />
-          <ButtonPanel onClick={this.handleButtonClick} />
+          <div className="calculator">
+            <Display
+              firstNumber={firstNumber}
+              operator={operator}
+              secondNumber={secondNumber}
+              result={results}
+            />
+            <ButtonPanel onClick={this.handleButtonClick} />
+          </div>
         </header>
       </div>
     );

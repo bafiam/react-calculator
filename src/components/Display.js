@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import '../css/Display.css';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class Display extends Component {
@@ -8,11 +9,11 @@ class Display extends Component {
       firstNumber, operator, secondNumber, result,
     } = this.props;
     return (
-      <div>
-        <div>{firstNumber}</div>
-        <div>{operator}</div>
-        <div>{secondNumber}</div>
-        <div>{result}</div>
+      <div className="display">
+        <div className="displayDivs">{firstNumber}</div>
+        <div className="displayDivs ft-r">{operator}</div>
+        <div className="displayDivs">{secondNumber}</div>
+        <div className="displayDivs ft-r ">{result}</div>
       </div>
     );
   }
