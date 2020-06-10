@@ -1,54 +1,80 @@
-import React, { Component } from 'react';
-import '../css/App.css';
-import ButtonPanel from './ButtonPanel';
-import Display from './Display';
-
+import React, { Component } from "react";
+import "../css/App.css";
+import ButtonPanel from "./ButtonPanel";
+import Display from "./Display";
+import calculate from "../logic/calculate";
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      firstNumber: '',
-      operator: 'sign',
-      secondNumber: '',
-      // action: '0',
-      results: '0',
+      firstNumber: "",
+      operator: "sign",
+      secondNumber: "",
+      action: "",
+      results: "0",
     };
     this.handleButtonClick = this.handleButtonClick.bind(this);
   }
 
   handleButtonClick(value) {
-    const numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '.'];
-    const ops = ['÷', '*', '-', '+', '%'];
-    const { firstNumber, operator, secondNumber } = this.state;
+    const numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "."];
+    const ops = ["÷", "*", "-", "+", "%"];
+    const { firstNumber, operator, secondNumber, action, results } = this.state;
+    const actions = ["=", "AC", "+/-"];
+    // set user input and view/display
 
-    if (numbers.includes(value) && operator === 'sign') {
+    if (numbers.includes(value) && operator === "sign") {
       this.setState({
         firstNumber: firstNumber.concat(value),
       });
     } else if (
-      numbers.includes(value)
-      && firstNumber !== ''
-      && operator !== 'sign'
+      numbers.includes(value) &&
+      firstNumber !== "" &&
+      operator !== "sign"
     ) {
       this.setState({
         secondNumber: secondNumber.concat(value),
       });
     } else if (
-      ops.includes(value)
-      && operator === 'sign'
-      && firstNumber !== ''
+      ops.includes(value) &&
+      operator === "sign" &&
+      firstNumber !== ""
     ) {
       this.setState({
         operator: value,
       });
     }
+    if (actions.includes(value)) {
+      this.setState({
+        action: value,
+      });
+    }
+
+    // calculate now when all values are set by user/provided
+    if (actions.includes(value)) {
+      const total = calculate(
+        firstNumber,
+        secondNumber,
+        operator,
+        action,
+        results
+      );
+      if (total) {
+        console.log(total.answer);
+        this.setState({
+          // firstNumber: "",
+          // operator: "sign",
+          // secondNumber: "",
+          action: "",
+          results: total.answer,
+        });
+      }
+    }
   }
 
   render() {
-    const {
-      firstNumber, operator, secondNumber, results,
-    } = this.state;
+    const { firstNumber, operator, secondNumber, results } = this.state;
     return (
       <div className="App">
         <header className="App-header">
