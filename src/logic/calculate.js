@@ -68,5 +68,6 @@ const calculate = (firstNumber, secondNumber, operator, action, results) => {
     answer, firstNumber, operator, secondNumber,
   };
 };
-/* eslint-enable no-param-reassign */
+
 export default calculate;
+/* eslint-enable no-param-reassign */
