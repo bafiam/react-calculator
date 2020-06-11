@@ -19,7 +19,7 @@
     "no-shadow": "off",
     "arrow-parens": ["error", "as-needed"],
     "jsx-a11y/href-no-hash": [0], 
-    "jsx-a11y/anchor-is-valid": ["warn", { "aspects": ["invalidHref"] }]
+    "jsx-a11y/img-has-alt": [0]
   },
   "ignorePatterns": [
     "dist/",
