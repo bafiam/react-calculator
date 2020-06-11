@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions */
 import Big from 'big.js';
 // eslint-disable-next-line consistent-return
 const operate = (numberOne, numberTwo, operation) => {
