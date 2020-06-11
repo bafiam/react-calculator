@@ -19,9 +19,9 @@ class App extends Component {
 
   handleButtonClick(value) {
     const numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "."];
-    const ops = ["÷", "*", "-", "+", "%"];
+    const ops = ["÷", "*", "-", "+", ];
     const { firstNumber, operator, secondNumber, action, results } = this.state;
-    const actions = ["=", "AC", "+/-"];
+    const actions = ["=", "AC", "+/-","%"];
     // set user input and view/display
 
     if (numbers.includes(value) && operator === "sign") {
@@ -49,10 +49,10 @@ class App extends Component {
       this.setState({
         action: value,
       });
-    }
+  
 
-    // calculate now when all values are set by user/provided
-    if (actions.includes(value)) {
+      // calculate now when all values are set by user/provided
+
       const total = calculate(
         firstNumber,
         secondNumber,
@@ -60,12 +60,12 @@ class App extends Component {
         action,
         results
       );
-      if (total) {
+      if (total.answer) {
         console.log(total.answer);
         this.setState({
-          // firstNumber: "",
-          // operator: "sign",
-          // secondNumber: "",
+          firstNumber: total.firstNumber,
+          operator: total.operator,
+          secondNumber: total.secondNumber,
           action: "",
           results: total.answer,
         });

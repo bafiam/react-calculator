@@ -16,9 +16,6 @@ const operate = (numberOne, numberTwo, operation) => {
     if (numberOne) {
       return a.mul(0.01).valueOf();
     }
-    if (numberTwo) {
-      return b.mul(0.01).valueOf();
-    }
   }
   if (operation === '-') {
     return a.minus(b).valueOf();
@@ -33,9 +30,13 @@ const operate = (numberOne, numberTwo, operation) => {
   }
 
   if (operation === '÷') {
-    if (numberOne === '0' || numberTwo === '0'){
-      return 'NaN';
-    }else{
+    if (numberOne === '0' && numberTwo === '0'){
+      return "Math Error";
+    }
+    else if(numberOne !== '0' && numberTwo === '0'){
+      return "Math Error";
+    }
+    else{
       return a.div(b).valueOf()
     }
     
