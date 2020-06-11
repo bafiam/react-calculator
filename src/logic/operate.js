@@ -1,5 +1,6 @@
 import Big from 'big.js';
 
+// eslint-disable-next-line consistent-return
 const operate = (numberOne, numberTwo, operation) => {
   let a;
   let b;
@@ -30,19 +31,14 @@ const operate = (numberOne, numberTwo, operation) => {
   }
 
   if (operation === '÷') {
-    if (numberOne === '0' && numberTwo === '0'){
-      return "Math Error";
+    if (numberOne === '0' && numberTwo === '0') {
+      return 'Math Error';
     }
-    else if(numberOne !== '0' && numberTwo === '0'){
-      return "Math Error";
+    if (numberOne !== '0' && numberTwo === '0') {
+      return 'Math Error';
     }
-    else{
-      return a.div(b).valueOf()
-    }
-    
+
+    return a.div(b).valueOf();
   }
-  
-
-
-}
-export default operate
+};
+export default operate;
