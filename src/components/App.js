@@ -53,7 +53,6 @@ class App extends Component {
         action: value,
       });
 
-
       // calculate now when all values are set by user/provided
 
       const total = calculate(

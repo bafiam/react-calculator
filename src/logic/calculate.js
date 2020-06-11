@@ -24,7 +24,6 @@ const calculate = (firstNumber, secondNumber, operator, action, results) => {
       const getfirstNumber = firstNumber;
       firstNumber = getfirstNumber;
 
-
       const getoperator = operator;
       operator = getoperator;
       secondNumber = '';
