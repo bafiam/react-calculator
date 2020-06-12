@@ -49,9 +49,6 @@ const operate = (numberOne, numberTwo, operation) => {
   }
 
   if (operation === '÷') {
-    if (numberOne === '0' && numberTwo === '0') {
-      return 'Math Error';
-    }
     if (numberOne !== '0' && numberTwo === '0') {
       return 'Math Error';
     }
