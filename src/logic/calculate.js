@@ -1,6 +1,7 @@
 import operate from './operate';
-/* eslint-disable no-param-reassign */
+
 const calculate = (firstNumber, secondNumber, operator, action, results) => {
+  /* eslint-disable no-param-reassign */
   let answer;
   if (action === '=') {
     if (firstNumber !== '' && operator === 'sign') {
@@ -66,6 +67,5 @@ const calculate = (firstNumber, secondNumber, operator, action, results) => {
     answer, firstNumber, operator, secondNumber,
   };
 };
-
-export default calculate;
 /* eslint-enable no-param-reassign */
+export default calculate;
