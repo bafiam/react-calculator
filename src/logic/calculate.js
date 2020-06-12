@@ -1,4 +1,3 @@
-/* eslint-disable import/extensions */
 import operate from './operate';
 /* eslint-disable no-param-reassign */
 const calculate = (firstNumber, secondNumber, operator, action, results) => {
