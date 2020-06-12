@@ -1,6 +1,6 @@
-/* eslint-disable */
-import Big from 'big.js';
 
+import Big from 'big.js';
+/* eslint-disable consistent-return */
 const operate = (numberOne, numberTwo, operation) => {
   let a;
   let b;
@@ -49,10 +49,10 @@ const operate = (numberOne, numberTwo, operation) => {
   }
 
   if (operation === '÷') {
-    if (numberOne !== '0' && numberTwo === '0') {
+    if (numberTwo === '0') {
       return 'Math Error';
     }
+    return a.div(b).valueOf();
   }
-  return a.div(b).valueOf();
 };
 export default operate;

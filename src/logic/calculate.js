@@ -1,4 +1,4 @@
-/* eslint-disable */
+
 import operate from './operate';
 
 const calculate = (firstNumber, secondNumber, operator, action, results) => {
