@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../css/App.css';
 import ButtonPanel from './ButtonPanel';
 import Display from './Display';
+import calculate from '../logic/calculate';
 
 class App extends Component {
   constructor(props) {
@@ -11,7 +12,7 @@ class App extends Component {
       firstNumber: '',
       operator: 'sign',
       secondNumber: '',
-      // action: '0',
+      action: '',
       results: '0',
     };
     this.handleButtonClick = this.handleButtonClick.bind(this);
@@ -19,8 +20,12 @@ class App extends Component {
 
   handleButtonClick(value) {
     const numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '.'];
-    const ops = ['÷', '*', '-', '+', '%'];
-    const { firstNumber, operator, secondNumber } = this.state;
+    const ops = ['÷', '*', '-', '+'];
+    const {
+      firstNumber, operator, secondNumber, action, results,
+    } = this.state;
+    const actions = ['=', 'AC', '+/-', '%'];
+    // set user input and view/display
 
     if (numbers.includes(value) && operator === 'sign') {
       this.setState({
@@ -42,6 +47,30 @@ class App extends Component {
       this.setState({
         operator: value,
       });
+    }
+    if (actions.includes(value)) {
+      this.setState({
+        action: value,
+      });
+
+      // calculate now when all values are set by user/provided
+
+      const total = calculate(
+        firstNumber,
+        secondNumber,
+        operator,
+        action,
+        results,
+      );
+      if (total.answer) {
+        this.setState({
+          firstNumber: total.firstNumber,
+          operator: total.operator,
+          secondNumber: total.secondNumber,
+          action: '',
+          results: total.answer,
+        });
+      }
     }
   }
 

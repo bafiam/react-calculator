@@ -11,6 +11,7 @@ class Button extends Component {
         type="button"
         className={name}
         value={value}
+        // eslint-disable-next-line react/jsx-no-bind
         onClick={onClick.bind(null, value)}
       >
         {value}
