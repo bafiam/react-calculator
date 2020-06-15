@@ -41,6 +41,8 @@ This project involves building a calculator that performs basic arithmetical ope
 
 - Npm
 
+- React
+
 ## Screenshots
 
 ### Home
