@@ -6,9 +6,10 @@ const operate = (numberOne, numberTwo, operation) => {
   let b;
 
   if (numberOne) {
-    if (numberOne.includes('.') && numberOne.split('.').length - 1 === 1) {
+    if (typeof numberOne === "string" && numberOne.includes('.') && numberOne.split('.').length - 1 === 1) {
       a = new Big(numberOne);
     } else if (
+      typeof numberOne === "string" && 
       numberOne.includes('.')
       && numberOne.split('.').length - 1 !== 1
     ) {
@@ -19,9 +20,10 @@ const operate = (numberOne, numberTwo, operation) => {
   }
 
   if (numberTwo) {
-    if (numberTwo.includes('.') && numberTwo.split('.').length - 1 === 1) {
+    if (typeof numberOne === "string" && numberTwo.includes('.') && numberTwo.split('.').length - 1 === 1) {
       b = new Big(numberTwo);
     } else if (
+      typeof numberOne === "string" && 
       numberTwo.includes('.')
       && numberTwo.split('.').length - 1 !== 1
     ) {
