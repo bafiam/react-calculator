@@ -20,6 +20,7 @@ class App extends Component {
 
   handleButtonClick(value) {
     const numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '.'];
+    console.log(value)
     const ops = ['÷', '*', '-', '+'];
     const {
       firstNumber, operator, secondNumber, action, results,
@@ -30,6 +31,11 @@ class App extends Component {
     if (numbers.includes(value) && operator === 'sign') {
       this.setState({
         firstNumber: firstNumber.concat(value),
+        operator: 'sign',
+        secondNumber: '',
+        action: '',
+        results: '0',
+
       });
     } else if (
       numbers.includes(value)
