@@ -30,6 +30,11 @@ class App extends Component {
     if (numbers.includes(value) && operator === 'sign') {
       this.setState({
         firstNumber: firstNumber.concat(value),
+        operator: 'sign',
+        secondNumber: '',
+        action: '',
+        results: '0',
+
       });
     } else if (
       numbers.includes(value)
@@ -46,6 +51,15 @@ class App extends Component {
     ) {
       this.setState({
         operator: value,
+      });
+    } else if (firstNumber !== '' && operator !== 'sign' && secondNumber !== '' && results !== '0' && ops.includes(value)) {
+      this.setState({
+        firstNumber: results,
+        operator: value,
+        secondNumber: '',
+        action: '',
+        results: '0',
+
       });
     }
     if (actions.includes(value)) {

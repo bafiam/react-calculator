@@ -23,6 +23,7 @@
 ## Table of Contents
 
 - [About the Project](#about-the-project)
+- [Screenshots](#screenshots)
 - [How to Use](#how-to-Use)
 - [Roadmap](#roadmap)
 - [License](#license)
@@ -40,9 +41,21 @@ This project involves building a calculator that performs basic arithmetical ope
 
 - Npm
 
+- React
+
+## Screenshots
+
+### Home
+
+![screenshot](screenshots/home.png)
+
+### Calculations
+
+![screenshot](screenshots/calc.png)
+
 ### How to Use
 
-Action keys [`=`, `AC`, `%`, `+/-`]--Doudle click to execute
+Action keys [`=`, `AC`, `%`, `+/-`]--Double click to execute
 
 `=` - execute the operations
 

@@ -6,10 +6,12 @@ const operate = (numberOne, numberTwo, operation) => {
   let b;
 
   if (numberOne) {
-    if (numberOne.includes('.') && numberOne.split('.').length - 1 === 1) {
+    if (typeof numberOne === 'string' && numberOne.indexOf('.') > -1
+    && numberOne.split('.').length - 1 === 1) {
       a = new Big(numberOne);
     } else if (
-      numberOne.includes('.')
+      typeof numberOne === 'string'
+      && numberOne.indexOf('.') > -1
       && numberOne.split('.').length - 1 !== 1
     ) {
       return 'Math Error';
@@ -19,10 +21,12 @@ const operate = (numberOne, numberTwo, operation) => {
   }
 
   if (numberTwo) {
-    if (numberTwo.includes('.') && numberTwo.split('.').length - 1 === 1) {
+    if (typeof numberOne === 'string' && numberTwo.indexOf('.') > -1
+    && numberTwo.split('.').length - 1 === 1) {
       b = new Big(numberTwo);
     } else if (
-      numberTwo.includes('.')
+      typeof numberOne === 'string'
+      && numberTwo.indexOf('.') > -1
       && numberTwo.split('.').length - 1 !== 1
     ) {
       return 'Math Error';
