@@ -33,7 +33,7 @@
 
 ## About The Project
 
-This project involves building a calculator that performs basic arithmetical operations. The application is built using React Create-react-app and tests our understanding of react concepts such as components, classes and functions.
+This project involves building a calculator that performs basic arithmetical operations. The application is built using React Create-react-app and tests our understanding of react concepts such as components, classes, and functions.
 
 ### Prerequisites
 
